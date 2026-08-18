@@ -3,9 +3,33 @@ import { useTheme } from '../contexts/ThemeContext';
 
 const experiences = [
   {
+    role: 'Social Media Team Head',
+    company: 'Digitopedia',
+    period: 'Sep 2025 - Now',
+    color: 'blue',
+    achievements: [
+      'Managed Instagram & LinkedIn presence across 2+ accounts',
+      'Increased follower base by 40% through consistent posting',
+      'Created engaging reels, carousels, and caption hooks',
+      'Achieved 2K+ impressions on posts',
+    ],
+  },
+  {
+    role: 'Digital Marketing Intern',
+    company: 'AWAKE',
+    period: 'Jun 2026 - Jul 2026',
+    color: 'mint',
+    achievements: [
+      'Analyzed Instagram & LinkedIn presence and recommended improvements',
+      'Conducted competitor analysis of peer organizations in the sector',
+      'Reviewed Annual Report and newsletter for content improvements',
+      'Researched SEO, AEO and GEO for online discoverability',
+    ],
+  },
+  {
     role: 'Social Media Intern',
     company: 'Digitopedia Solutions',
-    period: 'Feb 2026 - Now',
+    period: 'Feb 2026 - May 2026',
     color: 'blue',
     achievements: [
       'Planned and executed weekly posting schedules (4–5 posts/week)',
@@ -14,15 +38,14 @@ const experiences = [
     ],
   },
   {
-    role: 'Social Media Team Member',
-    company: 'Digitopedia',
-    period: 'Sep 2025 - Now',
+    role: 'Website Growth & Content Strategy',
+    company: 'Early Stage Startup',
+    period: 'Mar 2026 - Apr 2026',
     color: 'mint',
     achievements: [
-      'Managed Instagram & LinkedIn presence across 2+ accounts',
-      'Increased follower base by 40% through consistent posting',
-      'Created engaging reels, carousels, and caption hooks',
-      'Achieved 2K+ impressions on posts',
+      'Improved website engagement and user experience',
+      'Contributed to landing page messaging',
+      'Suggested CTA placement and value proposition improvements',
     ],
   },
   {
@@ -34,17 +57,6 @@ const experiences = [
       'Researched digital marketing trends',
       'Contributed to content strategy planning',
       'Analyzed market opportunities',
-    ],
-  },
-  {
-    role: 'Website Growth & Content Strategy',
-    company: 'Early Stage Startup',
-    period: 'Mar 2026 - Present',
-    color: 'mint',
-    achievements: [
-      'Improved website engagement and user experience',
-      'Contributed to landing page messaging',
-      'Suggested CTA placement and value proposition improvements',
     ],
   },
 ];
@@ -101,11 +113,10 @@ export default function Experience() {
                 key={index}
                 data-exp-card
                 data-index={index}
-                className={`group relative transition-all duration-500 transform ${
-                  visibleItems[index]
+                className={`group relative transition-all duration-500 transform ${visibleItems[index]
                     ? 'opacity-100 translate-x-0'
                     : 'opacity-0 -translate-x-8'
-                }`}
+                  }`}
                 style={{
                   transitionDelay: `${index * 100}ms`,
                 }}
@@ -121,11 +132,10 @@ export default function Experience() {
 
                 {/* Card */}
                 <div
-                  className={`p-6 bg-card border-2 rounded-xl transition-all duration-300 hover:-translate-y-0.5 ${
-                    theme === 'dark' 
-                      ? 'hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:border-blue' 
+                  className={`p-6 bg-card border-2 rounded-xl transition-all duration-300 hover:-translate-y-0.5 ${theme === 'dark'
+                      ? 'hover:shadow-[0_0_20px_rgba(59,130,246,0.2)] hover:border-blue'
                       : 'hover:shadow-lg'
-                  }`}
+                    }`}
                   style={{
                     borderLeftWidth: '6px',
                     borderLeftColor: colorMap[exp.color],
