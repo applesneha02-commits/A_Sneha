@@ -20,39 +20,39 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 editorial-grain pointer-events-none opacity-25"></div>
 
       {/* Top Editorial Bar */}
-      <div className="relative z-30 max-w-7xl mx-auto px-6 sm:px-8 w-full flex items-center justify-between text-xs sm:text-sm tracking-[0.25em] uppercase font-mono pb-4 border-b border-white/10">
+      <div className="relative z-30 max-w-7xl mx-auto px-5 sm:px-8 w-full flex items-center justify-between text-[10px] sm:text-xs tracking-wider sm:tracking-[0.25em] uppercase font-mono pb-3 sm:pb-4 border-b border-white/10">
         <div className="space-y-0.5">
           <p className="text-crimson-bright font-bold">SOCIAL MEDIA MARKETER</p>
           <p className="text-warmivory/80 font-medium">DIGITAL CREATOR</p>
         </div>
-        <div className="flex items-center gap-2 text-dustyrose">
-          <span className="relative flex h-2.5 w-2.5">
+        <div className="flex items-center gap-1.5 sm:gap-2 text-dustyrose">
+          <span className="relative flex h-2 sm:h-2.5 w-2 sm:w-2.5">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-crimson opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-crimson"></span>
+            <span className="relative inline-flex rounded-full h-2 sm:h-2.5 w-2 sm:w-2.5 bg-crimson"></span>
           </span>
-          <span className="font-bold text-white tracking-widest text-xs sm:text-sm">
+          <span className="font-bold text-white tracking-wider sm:tracking-widest text-[10px] sm:text-xs">
             AVAILABLE FOR INTERNSHIPS
           </span>
-          <span className="text-crimson font-serif text-base">✦</span>
+          <span className="text-crimson font-serif text-sm sm:text-base">✦</span>
         </div>
       </div>
 
       {/* =========================================================================
-          MASSIVE BACKGROUND TYPOGRAPHY: "PORTFOLIO"
+          DESKTOP BACKGROUND TYPOGRAPHY: "PORTFOLIO" (lg: only)
           Bold, condensed, vibrant deep crimson red spanning edge to edge!
           Positioned vertically so the portrait head overlaps T, F, O, L!
          ========================================================================= */}
       <div
-        className="absolute top-[16%] sm:top-[17%] lg:top-[16%] inset-x-0 w-full text-center select-none pointer-events-none z-0 overflow-hidden"
+        className="hidden lg:block absolute top-[16%] inset-x-0 w-full text-center select-none pointer-events-none z-0 overflow-hidden"
         aria-hidden="true"
       >
-        <span className="font-display text-[26vw] sm:text-[23vw] lg:text-[22vw] font-black leading-none tracking-tight text-crimson/85 block transform -translate-y-2 sm:-translate-y-4">
+        <span className="font-display text-[22vw] font-black leading-none tracking-tight text-crimson/85 block transform -translate-y-4">
           PORTFOLIO
         </span>
       </div>
 
-      {/* Ambient Radial Burgundy Glow directly behind portrait */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-crimson/25 rounded-full blur-[160px] pointer-events-none z-0"></div>
+      {/* Ambient Radial Burgundy Glow directly behind portrait (Desktop) */}
+      <div className="hidden lg:block absolute bottom-10 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-crimson/25 rounded-full blur-[160px] pointer-events-none z-0"></div>
 
       {/* =========================================================================
           DESKTOP OVERLAPPING PORTRAIT (lg: and above)
@@ -72,41 +72,138 @@ export const Hero: React.FC = () => {
       </div>
 
       {/* =========================================================================
-          MAIN EDITORIAL GRID
-          - Desktop: Left 5 cols (bio), Center 4 cols (spacer for portrait), Right 3 cols (stats)
-          - Mobile: Name/Title -> Overlapping Portrait -> Bio & Buttons -> 3 Stats
+          MAIN EDITORIAL WRAPPER
          ========================================================================= */}
-      <div className="relative z-20 max-w-7xl mx-auto px-6 sm:px-8 w-full my-auto py-6 lg:py-8">
+      <div className="relative z-20 max-w-7xl mx-auto px-5 sm:px-8 w-full my-auto py-4 lg:py-8">
 
-        {/* Mobile Header: Script + Name + Role (visible on < lg) */}
-        <div className="lg:hidden text-center space-y-2 pb-2">
-          <span className="font-editorial italic text-3xl text-crimson-bright font-medium block">
-            Hello, I&apos;m
-          </span>
-          <h1 className="font-display text-7xl sm:text-8xl tracking-tight text-white uppercase font-black leading-none">
-            A SNEHA
-          </h1>
-          <p className="text-xs sm:text-sm font-display tracking-[0.22em] text-crimson-bright uppercase font-bold pt-1">
-            SOCIAL MEDIA MARKETER &amp; CONTENT STRATEGIST
-          </p>
-        </div>
+        {/* =========================================================================
+            MOBILE LAYOUT (< lg)
+            Clean, spacious, editorial luxury. No colliding text layers!
+           ========================================================================= */}
+        <div className="lg:hidden flex flex-col items-center w-full space-y-5 pt-2 pb-6">
+          
+          {/* 1. Mobile Header: Script + Name + Role */}
+          <div className="text-center space-y-1.5 px-4 z-20">
+            <span className="font-editorial italic text-2xl sm:text-3xl text-crimson-bright font-normal block">
+              Hello, I&apos;m
+            </span>
+            <h1 className="font-display text-6xl sm:text-7xl tracking-tight text-white uppercase font-black leading-none">
+              A SNEHA
+            </h1>
+            <p className="text-xs sm:text-sm font-display tracking-[0.2em] text-dustyrose uppercase font-bold pt-0.5">
+              SOCIAL MEDIA MARKETER &amp; CONTENT STRATEGIST
+            </p>
+          </div>
 
-        {/* Mobile Overlapping Portrait (< lg) */}
-        <div className="lg:hidden relative w-full flex justify-center -mt-2 mb-6 z-10">
-          <div className="relative w-full max-w-[340px] sm:max-w-[400px] flex justify-center">
+          {/* 2. Mobile Visual Centerpiece Stage:
+                 Sneha's Cutout Portrait overlapping the Massive Crimson PORTFOLIO typography! */}
+          <div className="relative w-full h-[360px] sm:h-[420px] flex items-end justify-center overflow-hidden my-1">
+            
+            {/* Ambient Burgundy Glow directly behind portrait */}
+            <div className="absolute inset-0 bg-radial from-crimson/35 via-burgundy/20 to-transparent blur-3xl pointer-events-none z-0"></div>
+
+            {/* Background "PORTFOLIO" Typography centered behind Sneha */}
+            <div
+              className="absolute top-8 sm:top-10 inset-x-0 w-full text-center select-none pointer-events-none z-0"
+              aria-hidden="true"
+            >
+              <span className="font-display text-[27vw] sm:text-[23vw] font-black leading-none tracking-tight text-crimson/80 block">
+                PORTFOLIO
+              </span>
+            </div>
+
+            {/* Overlapping Portrait: Head overlaps T, F, O, L cleanly! */}
             <img
               src="/sneha_hero.png"
               alt="A Sneha"
-              className="w-full h-auto max-h-[440px] object-contain object-bottom filter contrast-[1.05] drop-shadow-[0_20px_40px_rgba(0,0,0,0.9)]"
+              className="relative z-10 h-full w-auto max-w-none object-contain object-bottom filter contrast-[1.05] drop-shadow-[0_20px_40px_rgba(0,0,0,0.95)]"
               style={{
-                maskImage: 'linear-gradient(to bottom, black 0%, black 84%, transparent 100%)',
-                WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 84%, transparent 100%)',
+                maskImage: 'linear-gradient(to bottom, black 0%, black 82%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 82%, transparent 100%)',
               }}
             />
           </div>
+
+          {/* 3. Bio & Availability Pill */}
+          <div className="w-full max-w-lg px-2 sm:px-6 space-y-4 text-center z-20">
+            <p className="text-sm sm:text-base text-warmivory font-normal leading-relaxed">
+              I&apos;m A Sneha, a BBA Digital Marketing student at Presidency University, Bengaluru. I plan content, study competitors and build brands on Instagram and LinkedIn. I grew my own LinkedIn from 100+ to 500+ connections, and I now lead social media at Digitopedia.
+            </p>
+
+            <div className="pt-1">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-charcoal border border-white/20 text-xs font-mono uppercase tracking-wider text-dustyrose shadow-md">
+                <span className="text-crimson font-bold">✦</span>
+                <span className="font-semibold text-white">OPEN TO INTERNSHIPS</span>
+              </div>
+            </div>
+
+            {/* 4. CTA Buttons: Large, Tappable, Responsive */}
+            <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3">
+              <a
+                href="#projects"
+                onClick={scrollToProjects}
+                className="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-crimson hover:bg-crimson-bright text-white rounded-full text-xs uppercase tracking-widest font-bold shadow-glow-crimson transition-all"
+              >
+                <span>VIEW MY PROJECTS</span>
+                <ArrowRight className="w-4 h-4" />
+              </a>
+
+              <a
+                href={PERSONAL_INFO.resumePath}
+                download="A_Sneha_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-3 px-8 py-3.5 bg-charcoal hover:bg-white/10 text-white rounded-full text-xs uppercase tracking-widest font-bold border border-white/20 hover:border-dustyrose transition-all shadow-md"
+              >
+                <Download className="w-4 h-4 text-dustyrose" />
+                <span>DOWNLOAD RESUME</span>
+              </a>
+            </div>
+
+            {/* 5. Supporting Quote Card */}
+            <div className="p-4 rounded-xl bg-charcoal/80 border border-white/15 backdrop-blur-sm text-center shadow-md mt-4">
+              <p className="text-xs sm:text-sm text-white/95 font-editorial italic leading-relaxed">
+                &ldquo;{PERSONAL_INFO.supportingSideText}&rdquo;
+              </p>
+            </div>
+
+            {/* 6. Compact 3-Column Key Metrics */}
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-3 border-t border-white/15">
+              <div className="p-2.5 sm:p-3 rounded-xl bg-charcoal/60 border border-white/10 text-center">
+                <span className="font-display text-2xl sm:text-3xl text-crimson-bright font-black block leading-none">
+                  500+
+                </span>
+                <span className="text-[9px] sm:text-[10px] uppercase font-mono tracking-wider text-warmivory/80 block mt-1">
+                  LINKEDIN
+                </span>
+              </div>
+              <div className="p-2.5 sm:p-3 rounded-xl bg-charcoal/60 border border-white/10 text-center">
+                <span className="font-display text-2xl sm:text-3xl text-crimson-bright font-black block leading-none">
+                  2,000+
+                </span>
+                <span className="text-[9px] sm:text-[10px] uppercase font-mono tracking-wider text-warmivory/80 block mt-1">
+                  IMPRESSIONS
+                </span>
+              </div>
+              <div className="p-2.5 sm:p-3 rounded-xl bg-charcoal/60 border border-white/10 text-center">
+                <span className="font-display text-2xl sm:text-3xl text-crimson-bright font-black block leading-none">
+                  40%
+                </span>
+                <span className="text-[9px] sm:text-[10px] uppercase font-mono tracking-wider text-warmivory/80 block mt-1">
+                  GROWTH
+                </span>
+              </div>
+            </div>
+
+          </div>
+
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-end">
+        {/* =========================================================================
+            DESKTOP MAIN EDITORIAL GRID (lg: and above) - UNCHANGED
+            - Desktop: Left 5 cols (bio), Center 4 cols (spacer for portrait), Right 3 cols (stats)
+           ========================================================================= */}
+        <div className="hidden lg:grid lg:grid-cols-12 gap-8 lg:gap-6 items-end">
 
           {/* =========================================
               LEFT COLUMN: 5 COLS
