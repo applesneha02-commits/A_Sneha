@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface NavbarProps {
@@ -38,7 +39,10 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   };
 
   return (
-    <header
+    <motion.header
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? 'bg-obsidian/90 backdrop-blur-md py-4 border-b border-borderline shadow-lg shadow-black/50'
@@ -155,6 +159,6 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           </div>
         </div>
       )}
-    </header>
+    </motion.header>
   );
 };
