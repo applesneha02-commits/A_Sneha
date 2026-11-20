@@ -27,7 +27,7 @@ export const Hero: React.FC = () => {
         initial={{ opacity: 0, y: -25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: smoothEase }}
-        className="relative z-30 max-w-7xl mx-auto px-5 sm:px-8 w-full flex items-center justify-between text-[10px] sm:text-xs tracking-wider sm:tracking-[0.25em] uppercase font-mono pb-3 sm:pb-4 border-b border-white/10"
+        className="relative z-30 max-w-[1440px] mx-auto px-5 sm:px-8 xl:px-12 w-full flex items-center justify-between text-[10px] sm:text-xs tracking-wider sm:tracking-[0.25em] uppercase font-mono pb-3 sm:pb-4 border-b border-white/10"
       >
         <div className="space-y-0.5">
           <p className="text-crimson-bright font-bold">SOCIAL MEDIA MARKETER</p>
@@ -71,13 +71,14 @@ export const Hero: React.FC = () => {
 
       {/* =========================================================================
           DESKTOP OVERLAPPING PORTRAIT (lg: and above)
-          Flies up from below into baseline position, overlapping PORTFOLIO!
+          Anchored to bottom-0, perfectly centered and scaled so she never collides
+          with left bio or right metrics!
          ========================================================================= */}
       <motion.div
         initial={{ opacity: 0, y: 160, scale: 0.94 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         transition={{ duration: 1.4, delay: 0.25, ease: smoothEase }}
-        className="hidden lg:flex absolute bottom-0 left-[51%] -translate-x-1/2 z-10 h-[80vh] max-h-[760px] min-h-[520px] w-auto items-end justify-center pointer-events-none select-none"
+        className="hidden lg:flex absolute bottom-0 left-[49%] -translate-x-1/2 z-10 h-[72vh] max-h-[640px] min-h-[460px] w-auto items-end justify-center pointer-events-none select-none"
       >
         <img
           src="/sneha_hero.png"
@@ -93,7 +94,7 @@ export const Hero: React.FC = () => {
       {/* =========================================================================
           MAIN EDITORIAL WRAPPER
          ========================================================================= */}
-      <div className="relative z-20 max-w-7xl mx-auto px-5 sm:px-8 w-full my-auto py-4 lg:py-8">
+      <div className="relative z-20 max-w-[1440px] mx-auto px-5 sm:px-8 xl:px-12 w-full my-auto py-4 lg:py-6">
 
         {/* =========================================================================
             MOBILE LAYOUT (< lg)
@@ -250,31 +251,32 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* =========================================================================
-            DESKTOP MAIN EDITORIAL GRID (lg: and above)
-            - Staggered fly-in animation for left column, center, and right metrics
+            DESKTOP MAIN EDITORIAL ROW (lg: and above)
+            - Far left and far right anchoring so center portrait has total breathing room!
+            - Zero collision with Sneha's face, neck, shoulder, or body!
            ========================================================================= */}
-        <div className="hidden lg:grid lg:grid-cols-12 gap-8 lg:gap-6 items-end">
+        <div className="hidden lg:flex items-end justify-between w-full">
 
           {/* =========================================
-              LEFT COLUMN: 5 COLS
+              LEFT COLUMN: Docked to far left
               Script, Big Name, Role, Bio, CTAs
              ========================================= */}
-          <div className="lg:col-span-5 flex flex-col justify-end space-y-6 z-30 pb-4 lg:pb-12">
+          <div className="w-full max-w-[420px] xl:max-w-[460px] flex flex-col justify-end space-y-5 z-30 pb-4 lg:pb-10">
 
             {/* Desktop Only: Script Greeting & Big Name (Flies up) */}
             <motion.div
               initial={{ opacity: 0, y: 60 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.0, delay: 0.35, ease: smoothEase }}
-              className="space-y-2"
+              className="space-y-1.5"
             >
               <span className="font-editorial italic text-3xl xl:text-4xl text-crimson-bright font-normal block">
                 Hello, I&apos;m
               </span>
-              <h1 className="font-display text-7xl xl:text-9xl tracking-tight text-white uppercase font-black leading-[0.88]">
+              <h1 className="font-display text-6xl xl:text-8xl tracking-tight text-white uppercase font-black leading-[0.9]">
                 A SNEHA
               </h1>
-              <div className="pt-2 text-sm xl:text-base font-display tracking-[0.25em] text-crimson-bright uppercase font-bold">
+              <div className="pt-1.5 text-xs xl:text-sm font-display tracking-[0.22em] text-crimson-bright uppercase font-bold">
                 SOCIAL MEDIA MARKETER &amp; CONTENT STRATEGIST
               </div>
             </motion.div>
@@ -284,7 +286,7 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.5, ease: smoothEase }}
-              className="text-base sm:text-lg text-warmivory font-normal leading-relaxed max-w-xl"
+              className="text-sm xl:text-base text-warmivory font-normal leading-relaxed max-w-md"
             >
               I&apos;m A Sneha, a BBA Digital Marketing student at Presidency University, Bengaluru. I plan content, study competitors and build brands on Instagram and LinkedIn. I grew my own LinkedIn from 100+ to 500+ connections, and I now lead social media at Digitopedia.
             </motion.p>
@@ -296,9 +298,9 @@ export const Hero: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.65, ease: smoothEase }}
               className="pt-1"
             >
-              <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-charcoal border border-white/20 text-xs sm:text-sm font-mono uppercase tracking-wider text-dustyrose shadow-md">
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-charcoal border border-white/20 text-xs font-mono uppercase tracking-wider text-dustyrose shadow-md">
                 <span className="text-crimson font-bold">✦</span>
-                <span className="font-semibold text-white">OPEN TO INTERNSHIPS &amp; COLLABORATIONS</span>
+                <span className="font-semibold text-white">OPEN TO INTERNSHIPS</span>
               </div>
             </motion.div>
 
@@ -307,12 +309,12 @@ export const Hero: React.FC = () => {
               initial={{ opacity: 0, y: 35 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.75, ease: smoothEase }}
-              className="pt-2 flex flex-wrap items-center gap-4"
+              className="pt-2 flex flex-wrap items-center gap-3.5"
             >
               <a
                 href="#projects"
                 onClick={scrollToProjects}
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-crimson hover:bg-crimson-bright text-white rounded-full text-xs sm:text-sm uppercase tracking-widest font-bold shadow-glow-crimson transition-all duration-300"
+                className="group inline-flex items-center gap-2.5 px-7 py-3.5 bg-crimson hover:bg-crimson-bright text-white rounded-full text-xs uppercase tracking-widest font-bold shadow-glow-crimson transition-all duration-300"
               >
                 <span>VIEW MY PROJECTS</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -323,7 +325,7 @@ export const Hero: React.FC = () => {
                 download="A_Sneha_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-3 px-8 py-4 bg-charcoal hover:bg-white/10 text-white rounded-full text-xs sm:text-sm uppercase tracking-widest font-bold border border-white/20 hover:border-dustyrose transition-all duration-300 shadow-md"
+                className="group inline-flex items-center gap-2.5 px-7 py-3.5 bg-charcoal hover:bg-white/10 text-white rounded-full text-xs uppercase tracking-widest font-bold border border-white/20 hover:border-dustyrose transition-all duration-300 shadow-md"
               >
                 <Download className="w-4 h-4 text-dustyrose transition-transform group-hover:-translate-y-0.5" />
                 <span>DOWNLOAD RESUME</span>
@@ -333,53 +335,48 @@ export const Hero: React.FC = () => {
           </div>
 
           {/* =========================================
-              CENTER COLUMN: 4 COLS (Spacer on Desktop)
-              Allows the absolute overlapping portrait to show through!
+              RIGHT COLUMN: Docked to far right
+              Clean strategy quote + Compact stacked metrics!
+              Zero collision with Sneha's face or body!
              ========================================= */}
-          <div className="hidden lg:block lg:col-span-4 h-32 pointer-events-none"></div>
+          <div className="w-full max-w-[240px] xl:max-w-[280px] flex flex-col justify-end space-y-6 z-30 pb-4 lg:pb-10">
 
-          {/* =========================================
-              RIGHT COLUMN: 3 COLS
-              Floating quote + Stacked large red statistics!
-             ========================================= */}
-          <div className="lg:col-span-3 flex flex-col justify-end space-y-6 z-30 pb-4 lg:pb-12">
-
-            {/* Supporting Quote with ✦ (Flies in from right) */}
+            {/* Supporting Quote with ✦ (Clean text, no opaque box covering Sneha!) */}
             <motion.div
-              initial={{ opacity: 0, x: 50, y: 20 }}
+              initial={{ opacity: 0, x: 40, y: 15 }}
               animate={{ opacity: 1, x: 0, y: 0 }}
               transition={{ duration: 1.0, delay: 0.55, ease: smoothEase }}
-              className="p-5 rounded-2xl bg-charcoal/80 border border-white/15 backdrop-blur-sm space-y-2 shadow-lg"
+              className="space-y-1.5"
             >
-              <div className="flex items-center gap-2 text-crimson">
-                <Sparkles className="w-4 h-4 text-crimson" />
-                <span className="text-xs font-mono uppercase tracking-widest text-dustyrose font-bold">
+              <div className="flex items-center gap-1.5 text-dustyrose">
+                <Sparkles className="w-3.5 h-3.5 text-crimson-bright" />
+                <span className="text-[11px] font-mono uppercase tracking-widest text-dustyrose font-bold">
                   CREATIVE STRATEGY
                 </span>
               </div>
-              <p className="text-sm sm:text-base text-white/95 font-editorial italic leading-relaxed">
+              <p className="text-xs xl:text-sm text-warmivory/90 font-editorial italic leading-relaxed">
                 &ldquo;{PERSONAL_INFO.supportingSideText}&rdquo;
               </p>
             </motion.div>
 
-            {/* Stack of Metrics (Staggered fly up on start) */}
-            <div className="grid grid-cols-3 lg:grid-cols-1 gap-4 sm:gap-6 pt-4 border-t border-white/15">
+            {/* Stack of Metrics (Staggered fly up on start, cleanly aligned to right) */}
+            <div className="space-y-4 pt-4 border-t border-white/15">
 
               {/* Metric 1 */}
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.75, ease: smoothEase }}
-                className="flex flex-col lg:flex-row lg:items-baseline gap-1 lg:gap-4 p-3 lg:p-0 rounded-xl bg-charcoal/50 lg:bg-transparent border border-white/10 lg:border-none"
+                className="flex items-baseline gap-3"
               >
-                <span className="font-display text-4xl sm:text-5xl xl:text-6xl text-crimson-bright font-black tracking-tight leading-none">
+                <span className="font-display text-4xl xl:text-5xl text-crimson-bright font-black tracking-tight leading-none">
                   500+
                 </span>
                 <div className="space-y-0.5">
-                  <p className="text-xs sm:text-sm uppercase font-black tracking-wider text-white">
+                  <p className="text-xs uppercase font-black tracking-wider text-white">
                     LINKEDIN
                   </p>
-                  <p className="text-[11px] sm:text-xs uppercase font-mono tracking-wider text-warmivory/80 font-medium">
+                  <p className="text-[10px] xl:text-[11px] uppercase font-mono tracking-wider text-warmivory/80 font-medium">
                     CONNECTIONS
                   </p>
                 </div>
@@ -387,19 +384,19 @@ export const Hero: React.FC = () => {
 
               {/* Metric 2 */}
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.9, ease: smoothEase }}
-                className="flex flex-col lg:flex-row lg:items-baseline gap-1 lg:gap-4 p-3 lg:p-0 rounded-xl bg-charcoal/50 lg:bg-transparent border border-white/10 lg:border-none"
+                className="flex items-baseline gap-3"
               >
-                <span className="font-display text-4xl sm:text-5xl xl:text-6xl text-crimson-bright font-black tracking-tight leading-none">
+                <span className="font-display text-4xl xl:text-5xl text-crimson-bright font-black tracking-tight leading-none">
                   2,000+
                 </span>
                 <div className="space-y-0.5">
-                  <p className="text-xs sm:text-sm uppercase font-black tracking-wider text-white">
+                  <p className="text-xs uppercase font-black tracking-wider text-white">
                     POST
                   </p>
-                  <p className="text-[11px] sm:text-xs uppercase font-mono tracking-wider text-warmivory/80 font-medium">
+                  <p className="text-[10px] xl:text-[11px] uppercase font-mono tracking-wider text-warmivory/80 font-medium">
                     IMPRESSIONS
                   </p>
                 </div>
@@ -407,19 +404,19 @@ export const Hero: React.FC = () => {
 
               {/* Metric 3 */}
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 1.05, ease: smoothEase }}
-                className="flex flex-col lg:flex-row lg:items-baseline gap-1 lg:gap-4 p-3 lg:p-0 rounded-xl bg-charcoal/50 lg:bg-transparent border border-white/10 lg:border-none"
+                className="flex items-baseline gap-3"
               >
-                <span className="font-display text-4xl sm:text-5xl xl:text-6xl text-crimson-bright font-black tracking-tight leading-none">
+                <span className="font-display text-4xl xl:text-5xl text-crimson-bright font-black tracking-tight leading-none">
                   40%
                 </span>
                 <div className="space-y-0.5">
-                  <p className="text-xs sm:text-sm uppercase font-black tracking-wider text-white">
+                  <p className="text-xs uppercase font-black tracking-wider text-white">
                     FOLLOWER
                   </p>
-                  <p className="text-[11px] sm:text-xs uppercase font-mono tracking-wider text-warmivory/80 font-medium">
+                  <p className="text-[10px] xl:text-[11px] uppercase font-mono tracking-wider text-warmivory/80 font-medium">
                     GROWTH
                   </p>
                 </div>
@@ -437,7 +434,7 @@ export const Hero: React.FC = () => {
         initial={{ opacity: 0, y: 25 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.15, ease: smoothEase }}
-        className="relative z-30 max-w-7xl mx-auto px-6 sm:px-8 w-full flex items-center justify-between text-xs sm:text-sm text-warmivory/80 font-mono uppercase py-4 border-t border-white/10"
+        className="relative z-30 max-w-[1440px] mx-auto px-6 sm:px-8 xl:px-12 w-full flex items-center justify-between text-xs sm:text-sm text-warmivory/80 font-mono uppercase py-4 border-t border-white/10"
       >
         <span className="text-crimson-bright font-bold">01 / OVERVIEW</span>
         <div className="flex items-center gap-2 font-medium">
